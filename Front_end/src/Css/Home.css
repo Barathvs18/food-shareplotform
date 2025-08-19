@@ -1,0 +1,171 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrap-container{
+    background-color:rgb(255, 255, 255);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 30px;
+    user-select: none;
+    position: relative;
+}
+
+/* header */
+.Home_header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    user-select: none;
+    background-color:rgb(255, 255, 255);
+}
+.Home_header img {
+    height: 75px;
+    width: auto;
+}
+.logoh1{
+    color: rgb(10, 10, 10);
+}
+.wrap-container h2{
+    margin: 20px;
+    color: black;
+
+}
+.wrap-container hr{
+    border: none;
+    height: 2px;
+    background-color: rgb(8, 1, 1);
+
+}
+.share_btn{
+    background-color: rgb(92, 53, 156);
+    padding: 20px;
+    border-radius: 50px;
+    color: white;
+     border: none;
+         font-size: large;
+    font-weight: bold;
+   
+}
+.header_icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+}
+
+/* middle */
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+   
+} 
+
+
+
+.food_card{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 20px;
+    width: 25%;
+    height: auto;
+    margin: 30px;
+    border-radius: 15px;
+}
+.info{
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+
+}
+.food_img{
+    height: 150px;
+    width: 150px;
+    border-color:rgb(251, 205, 152);
+    border-style: solid;
+    border-radius: 2px;
+
+}
+.food_info p{
+    padding-top: 10px;
+}
+.food_card button{
+    width: 100%;
+    font-style: normal;
+    font-size: medium;
+    font-weight: 400;
+    margin-top: 10px;
+    height: 30px;
+    background-color: rgb(92, 53, 156);
+    border-radius: 50px;
+    color:white
+}
+
+/* profile */
+
+.profile{
+    position:absolute;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 100%;
+    top: 0;
+    left: 100%;
+
+}
+.slide_in{
+    left:70%;
+    transition: 1s;
+}
+.slide_out{
+    left: 100%;
+    transition: 1s;
+}
+.profile_info{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+}
+.profile_info button{
+    
+    width: 25%;
+    border-radius:50px ;
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+    padding: 10px;
+
+}   
+.profile_info button:hover{
+    background-color: rgb(221, 69, 69);
+    cursor: pointer;
+    
+}
+.cancel_btn{
+    margin: 25px;
+    border-radius: 50%;
+    padding: 15px;
+    background-color: rgb(92, 53, 156);
+    color:white;
+    border: none;
+}
+
+
+

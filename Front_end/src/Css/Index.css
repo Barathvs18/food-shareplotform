@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-image: url(../img/top-view-table-full-food.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  filter: blur();
+  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-inline: 50px;
+  user-select: none;
+  
+}
+.header img {
+  height: 90px;
+  width: 90px;
+}
+.logo {
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 10px;
+}
+.login {
+  background-color: rgb(92, 53, 156);
+  color: white;
+  padding: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+
+}
+.login a {
+    text-decoration: none;
+text-decoration-line: none;
+  color: white;
+}
+.login:hover {
+   background-color: rgb(129, 78, 210);
+}
+
+/* middle */
+
+.mid-wrapper {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mid {
+  max-width: 80%;
+  text-align: center;
+  margin-top: 15%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  user-select: none;
+}
+.mid h1 {
+  font-size: xxx-large;
+  font-weight: bolder;
+  padding-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+.mid p {
+  padding: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: white;
+}
+.signup {
+  background-color: rgb(92, 53, 156);
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  font-size: large;
+  font-weight: 0;
+  border-radius: 50px;
+  border: none;
+  text-decoration: none;
+}
+.text {
+  text-decoration: none;
+}
+
+.signup:hover {
+  background-color:  rgb(129, 78, 210);
+}
