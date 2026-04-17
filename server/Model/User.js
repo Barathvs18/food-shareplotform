@@ -1,5 +1,5 @@
 // schema
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 
 const schema = new mongoose.Schema(
   {
@@ -15,17 +15,13 @@ const schema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-
     },
     role: {
       type: String,
       default: "user",
     },
   },
-  // for log
   { timestamps: true }
 );
 
 export const User = mongoose.model("User", schema);
-
-  

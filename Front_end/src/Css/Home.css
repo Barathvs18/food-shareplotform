@@ -1,171 +1,224 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-.wrap-container{
-    background-color:rgb(255, 255, 255);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    padding: 30px;
-    user-select: none;
-    position: relative;
+/* ── Home (Dashboard) ────────────────────────────────────────────────────── */
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
-/* header */
-.Home_header{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 10px;
-    user-select: none;
-    background-color:rgb(255, 255, 255);
+/* Top Nav */
+.home-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(10, 15, 10, 0.9);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.Home_header img {
-    height: 75px;
-    width: auto;
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
-.logoh1{
-    color: rgb(10, 10, 10);
+.home-brand span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
-.wrap-container h2{
-    margin: 20px;
-    color: black;
-
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
 }
-.wrap-container hr{
-    border: none;
-    height: 2px;
-    background-color: rgb(8, 1, 1);
-
-}
-.share_btn{
-    background-color: rgb(92, 53, 156);
-    padding: 20px;
-    border-radius: 50px;
-    color: white;
-     border: none;
-         font-size: large;
-    font-weight: bold;
-   
-}
-.header_icons{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-
-}
-
-/* middle */
-
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-
-   
-} 
-
-
-
-.food_card{
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    padding: 20px;
-    width: 25%;
-    height: auto;
-    margin: 30px;
-    border-radius: 15px;
-}
-.info{
-    display: flex;
-    gap: 20px;
-    flex-shrink: 0;
-
-}
-.food_img{
-    height: 150px;
-    width: 150px;
-    border-color:rgb(251, 205, 152);
-    border-style: solid;
-    border-radius: 2px;
-
-}
-.food_info p{
-    padding-top: 10px;
-}
-.food_card button{
-    width: 100%;
-    font-style: normal;
-    font-size: medium;
-    font-weight: 400;
-    margin-top: 10px;
-    height: 30px;
-    background-color: rgb(92, 53, 156);
-    border-radius: 50px;
-    color:white
+.user-pill:hover { border-color: var(--border-green); background: var(--bg-card-hover); }
+.user-avatar {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
 }
 
-/* profile */
-
-.profile{
-    position:absolute;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: rgb(255, 255, 255);
-    width: 30%;
-    height: 100%;
-    top: 0;
-    left: 100%;
-
+/* Dashboard main area */
+.home-main {
+  flex: 1;
+  padding: 48px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
-.slide_in{
-    left:70%;
-    transition: 1s;
+.home-greeting {
+  margin-bottom: 40px;
 }
-.slide_out{
-    left: 100%;
-    transition: 1s;
+.home-greeting h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
-.profile_info{
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    gap: 10px;
-    padding: 30px;
-}
-.profile_info button{
-    
-    width: 25%;
-    border-radius:50px ;
-    background-color: red;
-    border: none;
-    color: white;
-    font-weight: 700;
-    font-size: medium;
-    padding: 10px;
+.home-greeting p { color: var(--text-dim); margin-top: 6px; font-size: 0.95rem; }
 
-}   
-.profile_info button:hover{
-    background-color: rgb(221, 69, 69);
-    cursor: pointer;
-    
+/* Action Cards */
+.home-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
 }
-.cancel_btn{
-    margin: 25px;
-    border-radius: 50%;
-    padding: 15px;
-    background-color: rgb(92, 53, 156);
-    color:white;
-    border: none;
+.option-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.option-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: var(--transition);
+  border-radius: inherit;
+}
+.option-card.seek::before {
+  background: radial-gradient(ellipse at top left, rgba(34,197,94,0.08), transparent 70%);
+}
+.option-card.donate::before {
+  background: radial-gradient(ellipse at top left, rgba(245,158,11,0.08), transparent 70%);
+}
+.option-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.option-card:hover::before { opacity: 1; }
+.option-card.seek:hover { border-color: var(--border-green); }
+.option-card.donate:hover { border-color: rgba(245,158,11,0.4); }
+
+.option-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.option-card.seek .option-icon  { background: rgba(34,197,94,0.12); }
+.option-card.donate .option-icon { background: rgba(245,158,11,0.12); }
+
+.option-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.option-desc { font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; }
+.option-arrow {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.option-card.seek .option-arrow  { color: var(--primary-light); }
+.option-card.donate .option-arrow { color: var(--accent-light); }
+
+/* Profile Dropdown */
+.nav-right {
+  position: relative;
+}
+.profile-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  overflow: hidden;
+  animation: dropIn 0.2s ease forwards;
+  transform-origin: top right;
+  z-index: 200;
+}
+@keyframes dropIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.dropdown-header {
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid var(--border);
+}
+.dropdown-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.dropdown-email {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+.dropdown-links {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.dropdown-item:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-primary);
+}
+.logout-item {
+  color: #fca5a5;
+  margin-top: 4px;
+}
+.logout-item:hover {
+  background: rgba(239,68,68,0.1);
+  color: #fca5a5;
 }
 
-
-
+@media (max-width: 700px) {
+  .home-options { grid-template-columns: 1fr; }
+  .home-main { padding: 32px 20px; }
+  .home-nav { padding: 14px 20px; }
+  .home-greeting h2 { font-size: 1.5rem; }
+}

@@ -1,0 +1,4 @@
+/* App-level resets — global styles loaded from Global.css */
+#root {
+  min-height: 100vh;
+}

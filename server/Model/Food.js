@@ -1,8 +1,12 @@
 // schema
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 
 const schema = new mongoose.Schema(
-  { 
+  {
+    food_img: {
+      type: String,
+      default: "",
+    },
     food_type: {
       type: String,
       required: true,
@@ -14,21 +18,28 @@ const schema = new mongoose.Schema(
     location: {
       type: String,
       required: true,
-
     },
     contact: {
       type: String,
-      required:true
+      required: true,
     },
-    available_time:{
-        type:String,
-        required:true
+    available_time: {
+      // Store as ISO date string so we can compare
+      type: Date,
+      required: true,
+    },
+    donorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    isConfirmed: {
+      // true once donor confirms an order — hides from others
+      type: Boolean,
+      default: false,
     },
   },
-  // for log
   { timestamps: true }
 );
 
 export const Food = mongoose.model("Food", schema);
-
-  
