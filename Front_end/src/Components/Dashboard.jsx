@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { LayoutDashboard, ArrowLeft, RefreshCw, Inbox, Check, MapPin, Mail, Soup, Clock, Package } from "lucide-react";
 
+const API = import.meta.env.VITE_API_URL;
+
 export const UserDashboard = () => {
   const [pendingOrders, setPendingOrders] = useState([]); // Donor view
   const [myRequests, setMyRequests] = useState([]); // Seeker view
@@ -29,7 +31,7 @@ export const UserDashboard = () => {
   const fetchPendingOrders = async () => {
     setLoadingDonor(true);
     try {
-      const res = await axios.get("http://localhost:3000/api/food/pending-orders", { headers: { token } });
+      const res = await axios.get(`${API}/api/food/pending-orders`, { headers: { token } });
       setPendingOrders(res.data.orders || []);
     } catch {
       setPendingOrders([]);
@@ -41,7 +43,7 @@ export const UserDashboard = () => {
   const fetchMyRequests = async () => {
     setLoadingSeeker(true);
     try {
-      const res = await axios.get("http://localhost:3000/api/food/my-requests", { headers: { token } });
+      const res = await axios.get(`${API}/api/food/my-requests`, { headers: { token } });
       setMyRequests(res.data.orders || []);
     } catch {
       setMyRequests([]);
@@ -53,7 +55,7 @@ export const UserDashboard = () => {
   const handleConfirm = async (orderId) => {
     setConfirmingId(orderId);
     try {
-      await axios.put(`http://localhost:3000/api/food/confirm/${orderId}`, {}, { headers: { token } });
+      await axios.put(`${API}/api/food/confirm/${orderId}`, {}, { headers: { token } });
       showToast("✓ Order confirmed! The seeker has been notified.");
       fetchPendingOrders();
     } catch (err) {

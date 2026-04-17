@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { UtensilsCrossed, AlertTriangle, Check, ArrowRight } from "lucide-react";
 
+const API = import.meta.env.VITE_API_URL;
+
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +20,7 @@ const Signup = () => {
     setSuccess("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/user/register", {
+      const res = await axios.post(`${API}/api/user/register`, {
         name, email, password,
       });
       setSuccess(res.data.message);

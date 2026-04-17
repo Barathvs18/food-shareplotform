@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { UtensilsCrossed, AlertTriangle, ArrowRight } from "lucide-react";
 
+const API = import.meta.env.VITE_API_URL;
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +17,7 @@ const Login = () => {
     setError("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/user/login", {
+      const res = await axios.post(`${API}/api/user/login`, {
         email, password,
       });
       localStorage.setItem("profile_token", res.data.token);

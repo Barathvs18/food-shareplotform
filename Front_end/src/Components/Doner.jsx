@@ -6,6 +6,8 @@ import {
   Utensils, AlertTriangle, Check, Inbox, Soup, Mail, MapPin, RefreshCw 
 } from "lucide-react";
 
+const API = import.meta.env.VITE_API_URL;
+
 export const Donor = () => {
   // Form state
   const [food_type, setFoodType] = useState("");
@@ -38,7 +40,7 @@ export const Donor = () => {
   const fetchOrders = async () => {
     setLoadingOrders(true);
     try {
-      const res = await axios.get("http://localhost:3000/api/food/pending-orders", {
+      const res = await axios.get(`${API}/api/food/pending-orders`, {
         headers: { token },
       });
       setOrders(res.data.orders || []);
@@ -65,7 +67,7 @@ export const Donor = () => {
       formData.append("contact", contact);
       formData.append("available_time", available_time);
 
-      await axios.post("http://localhost:3000/api/food/donate", formData, {
+      await axios.post(`${API}/api/food/donate`, formData, {
         headers: { token, "Content-Type": "multipart/form-data" },
       });
 
@@ -83,7 +85,7 @@ export const Donor = () => {
   const handleConfirm = async (orderId) => {
     setConfirmingId(orderId);
     try {
-      await axios.put(`http://localhost:3000/api/food/confirm/${orderId}`, {}, {
+      await axios.put(`${API}/api/food/confirm/${orderId}`, {}, {
         headers: { token },
       });
       showToast("✓ Order confirmed! The seeker has been notified.");

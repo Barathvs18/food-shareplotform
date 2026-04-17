@@ -3,12 +3,14 @@ import axios from "axios";
 import { FoodCard } from "../components/FoodCard";
 import { FoodDetails } from "../components/FoodDetails";
 
+const API = import.meta.env.VITE_API_URL;
+
 export const FoodSeekPage = () => {
   const [foods, setFoods] = useState([]);
   const [selectedFood, setSelectedFood] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/foods").then((res) => {
+    axios.get(`${API}/foods`).then((res) => {
       setFoods(res.data);
     });
   }, []);

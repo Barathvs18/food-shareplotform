@@ -7,6 +7,8 @@ import {
 } from "lucide-react";
 
 // ── Time remaining helper ─────────────────────────────────────────────────
+const API = import.meta.env.VITE_API_URL;
+
 const getTimeLabel = (available_time) => {
   const diff = new Date(available_time) - new Date();
   if (diff <= 0) return { label: "Expired", expiring: true, expired: true };
@@ -36,7 +38,7 @@ export const Seeker = () => {
   const fetchFoods = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:3000/api/food/seek", {
+      const res = await axios.get(`${API}/api/food/seek`, {
         headers: { token },
       });
       setFoods(res.data.food_info || []);
@@ -63,7 +65,7 @@ export const Seeker = () => {
     setOrdering(true);
     try {
       await axios.post(
-        "http://localhost:3000/api/food/order",
+        `${API}/api/food/order`,
         { foodId: orderModal._id },
         { headers: { token } }
       );

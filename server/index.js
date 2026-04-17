@@ -22,7 +22,6 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-
 // Serve uploaded images statically
 app.use("/uploads", express.static(uploadsDir));
 
